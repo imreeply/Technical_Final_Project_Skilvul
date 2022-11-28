@@ -1,0 +1,101 @@
+  .carousel {
+    margin-bottom: 4rem;
+  }
+
+  .carousel-caption {
+    bottom: 3rem;
+    z-index: 10;
+  }
+  
+
+  .carousel-item {
+    height: 32rem;
+  }
+
+  .carousel-item > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 32rem;
+  }
+  
+  /* jaga lingkungan */
+
+  #jaga-lingkungan{
+    background-color: #1B5457;
+    color: rgb(240, 240, 240);
+  }
+
+  
+/* Harapan */
+
+.container-harapan {
+    margin-top: 50px;
+    text-align: center;
+    padding: 3rem;
+    background-color: #1B5457;
+  }
+  
+  .container-harapan h2 {
+    color: white;
+    padding-bottom: 3rem;
+    font-weight: 600;
+  }
+  
+  .container-harapan .container-card {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 2rem;
+  }
+  
+  .container-harapan .container-card .card {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 1rem;
+  }
+  
+  .container-harapan .card-body img {
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    border: 4px solid  #1B5457;
+  }
+  .people-title .nama {
+    padding-top: 20px;
+    font-weight: 600;
+  }
+  
+  .people-title h5 {
+    padding-top: 10px;
+    color: #287d7d;
+  }
+  
+  .people-title p {
+    color: #287d7d;
+    font-size: 12px;
+  }
+
+  .cardAction{
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  
+  /* End Harapan */
+  
+  /* RESPONSIVE CSS
+  -------------------------------------------------- */
+  
+  @media (min-width: 40em) {
+    .carousel-caption p {
+      margin-bottom: 1.25rem;
+      font-size: 1.25rem;
+      line-height: 1.4;
+    }
+
+    
+  
+  }
+  
