@@ -1,9 +1,24 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Dashboard.css";
 import { RiAddFill } from "react-icons/ri";
 import { BiEdit, BiTrashAlt } from "react-icons/bi";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
 function Dashboard() {
+  const [activity, setActivity] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      await getActivity();
+    })();
+  }, []);
+
+  const getActivity = async () => {
+    const response = await axios.get("https://coba2-production.up.railway.app/kegiatan");
+    console.log(response.data.data);
+  };
+
   return (
     <>
       <div className="TitlePage d-flex justify-content-center"></div>
@@ -16,10 +31,12 @@ function Dashboard() {
               </div>
               <div>
                 <div>
-                  <button className="buttonActivity">
-                    Add
-                    <RiAddFill size={18} />
-                  </button>
+                  <Link to="/AddActivity">
+                    <button className="buttonActivity">
+                      Add
+                      <RiAddFill size={18} />
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -27,36 +44,24 @@ function Dashboard() {
               <table className="table" style={{ borderRadius: "20px" }}>
                 <thead>
                   <tr>
+                    <th>No</th>
                     <th>Activity</th>
                     <th>Date</th>
                     <th className="text-end">Action</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>Menanam Pohonasasaasasasasa</td>
-                    <td>01/01/2023</td>
-                    <td className="text-end">
-                      <BiEdit size={24} color="#1B5457" className="actionButton" />
-                      <BiTrashAlt size={24} color="#CF2A2A" className="actionButton" />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Ciptakan Laut Bersih</td>
-                    <td>01/01/2023</td>
-                    <td className="text-end">
-                      <BiEdit size={24} color="#1B5457" className="actionButton" />
-                      <BiTrashAlt size={24} color="#CF2A2A" className="actionButton" />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Bersihkan Sampah</td>
-                    <td>01/01/2023</td>
-                    <td className="text-end">
-                      <BiEdit size={24} color="#1B5457" className="actionButton" />
-                      <BiTrashAlt size={24} color="#CF2A2A" className="actionButton" />
-                    </td>
-                  </tr>
+                  {activity.map((item, index) => {
+                    <tr key={item._id}>
+                      <td>{index + 1}</td>
+                      <td>{item.judul_kegiatan}</td>
+                      <td></td>
+                      <td className="text-end">
+                        <BiEdit size={24} color="#1B5457" className="actionButton" />
+                        <BiTrashAlt size={24} color="#CF2A2A" className="actionButton" />
+                      </td>
+                    </tr>;
+                  })}
                 </tbody>
               </table>
             </div>

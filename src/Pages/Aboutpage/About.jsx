@@ -1,5 +1,5 @@
-import React from 'react'
-import './About.css'
+import React from "react";
+import "./About.css";
 
 const About = () => {
   return (
@@ -41,24 +41,6 @@ const About = () => {
           </div>
         </div>
       </section>
-
-      <div className='container keterangan' fluid="md">
-        <h3 className='title'>Perjalanan kami</h3>
-        <div className='row'>
-          <div className='col'>
-            <img src="https://www.greenpeace.org/static/planet4-indonesia-stateless/2019/12/d7f04868-yt-id-2019-dec-thumbnails-3-510x287.png" className="img-fluid rounded-4 mb-4" alt="" />
-          </div>
-          <div className='col' >
-            <div className='desc mt-4'>
-              <p>Di tahun 2019 My Nature berusia 48 tahun dan sepanjang sejarahnya berhasil menciptakan banyak perubahan besar.
-                Ini awal mulanya perjuangan My Nature. Selama bertahun-tahun, My Nature telah melakukan suatu perubahan positif
-                untuk lingkungan di seluruh Indonesia. Kami dapat berjalan sejauh ini dengan kerjasama para relawan yang telah aktif dan peduli
-                dengan kondisi lingkungan yang semakin memburuk Terima kasih atas bantuanmu. Inilah kemenangan kita,
-                inilah kemenangan untuk lingkungan! My Nature terus bersuara dan berkembang dalam mengkampanyekan penyelamatan Bumi.</p>
-            </div>
-          </div>
-        </div>
-      </div>
 
       <section className="team text-center mt-5 mb-5">
         <div className="container" data-aos="fade-up">
@@ -207,18 +189,14 @@ const About = () => {
 
       <section className="contact mt-5">
         <div className="container" data-aos="fade-up">
-
           <div className="section-header">
             <h2>Contact</h2>
             <h5>Terima kasih atas minat kamu pada My Nature.</h5>
-            <p>Jika kamu mempunyai pertanyaan, atau keperluan silakan langsung hubungi kami melalui email,
-              telepon, atau berkunjung langsung ke kantor kami.</p>
+            <p>Jika kamu mempunyai pertanyaan, atau keperluan silakan langsung hubungi kami melalui email, telepon, atau berkunjung langsung ke kantor kami.</p>
           </div>
 
           <div className="row gx-lg-0 gy-4">
-
             <div className="col-lg-4">
-
               <div className="info-container d-flex flex-column align-items-center justify-content-center">
                 <div className="info-item d-flex">
                   <i className="bi bi-geo-alt flex-shrink-0"></i>
@@ -252,7 +230,6 @@ const About = () => {
                   </div>
                 </div>
               </div>
-
             </div>
 
             <div className="col-lg-8">
@@ -276,14 +253,16 @@ const About = () => {
                   <div className="error-message"></div>
                   <div className="sent-message">Your message has been sent. Thank you!</div>
                 </div>
-                <div className="text-center"><button type="submit">Send Message</button></div>
+                <div className="text-center">
+                  <button type="submit">Send Message</button>
+                </div>
               </form>
             </div>
           </div>
         </div>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default About
+export default About;

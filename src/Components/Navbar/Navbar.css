@@ -1,3 +1,15 @@
-.navItem{
-    margin: 0 4rem;
+.navItem {
+  margin: 0 4rem;
+}
+
+.collapse li a {
+  font-weight: bold;
+}
+
+.collapse li a:hover {
+  color: #198754;
+}
+
+#Login {
+  font-weight: bold;
 }

@@ -1,0 +1,43 @@
+.containerCard {
+  padding: 4rem;
+}
+
+.formAdd {
+  padding: 2rem;
+}
+
+.form-group {
+  padding: 10px;
+}
+
+.titleAct {
+  padding-top: 30px;
+}
+
+.titleAct img {
+  width: 200px;
+}
+
+.btnAddAct {
+  text-align: end;
+}
+
+.btn-addAct {
+  background-color: #31878c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  height: 40px;
+  width: 100px;
+  font-size: 15px;
+  font-weight: medium;
+}
+
+.btn-addAct:hover {
+  background-color: #00416a;
+  color: white;
+}
+
+.bgFormAdd {
+  background-image: url("https://res.cloudinary.com/dxi5woyp1/image/upload/v1669739347/MyNature/ScreenGB_1_govcwy.svg");
+}

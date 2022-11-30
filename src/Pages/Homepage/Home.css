@@ -1,101 +1,89 @@
-  .carousel {
-    margin-bottom: 4rem;
-  }
+.carousel-inner {
+  width: 400px;
+  height: 200px;
+}
 
-  .carousel-caption {
-    bottom: 3rem;
-    z-index: 10;
-  }
-  
+/* jaga lingkungan */
 
-  .carousel-item {
-    height: 32rem;
-  }
+#jaga-lingkungan {
+  background-color: #1b5457;
+  color: rgb(240, 240, 240);
+}
 
-  .carousel-item > img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    min-width: 100%;
-    height: 32rem;
-  }
-  
-  /* jaga lingkungan */
-
-  #jaga-lingkungan{
-    background-color: #1B5457;
-    color: rgb(240, 240, 240);
-  }
-
-  
 /* Harapan */
 
 .container-harapan {
-    margin-top: 50px;
-    text-align: center;
-    padding: 3rem;
-    background-color: #1B5457;
-  }
-  
-  .container-harapan h2 {
-    color: white;
-    padding-bottom: 3rem;
-    font-weight: 600;
-  }
-  
-  .container-harapan .container-card {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    padding: 2rem;
-  }
-  
-  .container-harapan .container-card .card {
-    background: #ffffff;
-    border-radius: 15px;
-    padding: 1rem;
-  }
-  
-  .container-harapan .card-body img {
-    width: 100px;
-    height: 100px;
-    border-radius: 100px;
-    border: 4px solid  #1B5457;
-  }
-  .people-title .nama {
-    padding-top: 20px;
-    font-weight: 600;
-  }
-  
-  .people-title h5 {
-    padding-top: 10px;
-    color: #287d7d;
-  }
-  
-  .people-title p {
-    color: #287d7d;
-    font-size: 12px;
-  }
+  margin-top: 50px;
+  text-align: center;
+  padding: 3rem;
+  background-image: url("https://res.cloudinary.com/dxi5woyp1/image/upload/v1669705861/MyNature/AspirasiBG_tnz8na.svg");
+}
 
-  .cardAction{
-    display: flex;
-    justify-content: space-evenly;
-  }
+.container-harapan h2 {
+  color: #31878c;
+  padding-bottom: 3rem;
+  font-weight: 600;
+}
 
-  
-  /* End Harapan */
-  
-  /* RESPONSIVE CSS
+.container-harapan .container-card {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 2rem;
+}
+
+.container-harapan .container-card .card {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 1rem;
+}
+
+.container-harapan .card-body img {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  border: 4px solid #1b5457;
+}
+.people-title .nama {
+  padding-top: 20px;
+  font-weight: 600;
+}
+
+.people-title h5 {
+  padding-top: 10px;
+  color: #287d7d;
+}
+
+.people-title p {
+  color: #287d7d;
+  font-size: 12px;
+}
+
+.motivationCard {
+  padding: 1rem;
+}
+
+.motivation {
+  padding: 1rem 4rem;
+}
+
+.motivation h3 {
+  padding-top: 2rem;
+  color: white;
+}
+
+.motivation img {
+  width: 200px;
+}
+/* End Harapan */
+
+/* RESPONSIVE CSS
   -------------------------------------------------- */
-  
-  @media (min-width: 40em) {
-    .carousel-caption p {
-      margin-bottom: 1.25rem;
-      font-size: 1.25rem;
-      line-height: 1.4;
-    }
 
-    
-  
+@media (min-width: 40em) {
+  .carousel-caption p {
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1.4;
   }
-  
+}
