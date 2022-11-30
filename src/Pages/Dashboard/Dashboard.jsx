@@ -16,7 +16,7 @@ function Dashboard() {
 
   const getActivity = async () => {
     const response = await axios.get("https://coba2-production.up.railway.app/kegiatan");
-    console.log(response.data.data);
+    setActivity(response?.data.data || []);
   };
 
   return (
@@ -51,17 +51,17 @@ function Dashboard() {
                   </tr>
                 </thead>
                 <tbody>
-                  {activity.map((item, index) => {
+                  {activity?.map((item, index) => (
                     <tr key={item._id}>
                       <td>{index + 1}</td>
                       <td>{item.judul_kegiatan}</td>
-                      <td></td>
+                      <td>{item.tgl_kegiatan}</td>
                       <td className="text-end">
                         <BiEdit size={24} color="#1B5457" className="actionButton" />
                         <BiTrashAlt size={24} color="#CF2A2A" className="actionButton" />
                       </td>
-                    </tr>;
-                  })}
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
