@@ -1,7 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+import "swiper/css/navigation";
+import "swiper/css";
 import "./Home.css";
+import { getHarapan } from "../../Redux/Actions/harapanAction";
+import CardHarapan from "../../Components/CardHarapan";
 
 const Home = () => {
+  SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
+  const dispatch = useDispatch();
+  const { harapan, isLoading } = useSelector((state) => state.harapan);
+
+  useEffect(() => {
+    dispatch(getHarapan());
+  }, []);
   return (
     <>
       {/* Card Document */}
@@ -22,7 +36,7 @@ const Home = () => {
           </div>
           <div className="col">
             <div className="desc mt-4">
-              <h4>
+              <h4 className="text-end">
                 <a style={{ color: "#31878C" }}>MyNature</a> adalah sebuah wadah untuk masyarakat agar dapat membuat sebuah komunitas dalam melakukan kegiatan positif terhadap lingkungan.
               </h4>
             </div>
@@ -55,35 +69,42 @@ const Home = () => {
       {/* Aspirasi */}
       <div className="container-harapan">
         <h2>Apa Harapan Mereka ?</h2>
-        <div className="container-card">
-          <div className="card" style={{ width: "14rem" }}>
-            <div className="card-body">
-              <img src="https://res.cloudinary.com/dxi5woyp1/image/upload/v1666273663/tech4impact/sheha_w541d2.svg" alt="" className="card-img" />
-              <div className="people-title">
-                <h5 className="nama">Donita</h5>
-                <p className="harapan">“ Semoga banyak generasi muda yang makin sadar pentingnya menjaga lingkungan dan ikut aktif dalam melakukan perubahannya ”</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="card" style={{ width: "14rem" }}>
-            <div className="card-body">
-              <img src="https://res.cloudinary.com/dxi5woyp1/image/upload/v1666273663/tech4impact/reza_jnvba2.svg" alt="" className="card-img" />
-              <div className="people-title">
-                <h5 className="nama">Reza</h5>
-                <p className="harapan">“ Indonesia harus kembali hijau lagi seperti dulu dan terus menjadi paru paru dunia demi keberlangsungan hidup kita semua ”</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="card" style={{ width: "14rem" }}>
-            <div className="card-body">
-              <img src="https://res.cloudinary.com/dxi5woyp1/image/upload/v1666273663/tech4impact/tegar_olhhfz.svg" alt="" className="card-img" />
-              <div className="people-title">
-                <h5 className="nama">Tegar</h5>
-                <p className="harapan">“ Masyarakat harus banyak mengetahui informasi tentang isu lingkungan yang sedang terjadi saat ini agar mereka bisa ikut kontribusi menanggulangi masalah tersebut ”</p>
-              </div>
-            </div>
+        <div className="row mx-auto">
+          <div className="swiper">
+            <Swiper
+              breakpoints={{
+                320: {
+                  slidesPerView: 1,
+                },
+                480: {
+                  slidesPerView: 2,
+                  spaceBetween: 30,
+                },
+                769: {
+                  slidesPerView: 3,
+                  spaceBetween: 40,
+                },
+              }}
+              spaceBetween={50}
+              slidesPerView={3}
+              navigation
+              pagination={{ clickable: true }}
+              scrollbar={{ draggable: true }}
+            >
+              {isLoading ? (
+                <div className="spinner-border" role="status">
+                  <span className="visually-hidden">Loading...</span>
+                </div>
+              ) : (
+                harapan.map((items) => {
+                  return (
+                    <SwiperSlide key={items.id}>
+                      <CardHarapan name={items.name} avatar={items.avatar} harapan={items.harapan} id={items.id} />
+                    </SwiperSlide>
+                  );
+                })
+              )}
+            </Swiper>
           </div>
         </div>
       </div>

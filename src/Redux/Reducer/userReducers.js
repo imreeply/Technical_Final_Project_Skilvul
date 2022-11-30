@@ -1,26 +1,26 @@
 import { SIGN_UP, SIGN_IN } from "../Actions/userAction";
 
 const initialState = {
-    user: [],
-}
+  user: [],
+};
 
 const userReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case SIGN_UP:
-            return {
-                ...state,
-                user: action.user,
-            }
+  switch (action.type) {
+    case SIGN_UP:
+      return {
+        ...state,
+        user: action.user,
+      };
 
-        case SIGN_IN:
-            return {
-                ...state,
-                user: action.user,
-            }
+    case SIGN_IN:
+      return {
+        ...state,
+        user: action.user,
+      };
 
-        default:
-            return state;
-    }
-}
+    default:
+      return state;
+  }
+};
 
 export default userReducer;
