@@ -21,7 +21,7 @@ const SignIn = () => {
     e.preventDefault();
     if (email && password) {
       try {
-        const response = await axios.post("https://coba2-production.up.railway.app/signin", { email, password });
+        const response = await axios.post("https://febe12be-production.up.railway.app/signin", { email, password });
         // localStorage.setItem('user', JSON.stringify(findUser))
         Swal.fire({
           icon: "success",
@@ -29,7 +29,9 @@ const SignIn = () => {
           showConfirmButton: false,
           timer: 1500,
         });
-        navigate("/about");
+        console.log(response.data.status);
+        sessionStorage.setItem("status", response.data.status);
+        navigate("/");
       } catch (error) {
         Swal.fire({
           icon: "error",

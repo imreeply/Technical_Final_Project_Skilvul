@@ -61,7 +61,7 @@ const Navbar = () => {
               </LinkContainer>
               <LinkContainer id="Login" to="/login">
                 <button type="button" className="btn btn-outline-success" id="login-btn">
-                  Login <i class="bi bi-box-arrow-in-right"></i>
+                  Login <i className="bi bi-box-arrow-in-right"></i>
                 </button>
               </LinkContainer>
             </ul>
