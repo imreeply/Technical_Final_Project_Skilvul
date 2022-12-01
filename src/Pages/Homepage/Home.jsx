@@ -53,8 +53,8 @@ const Home = () => {
             <div className="motivation d-flex justify-content-between">
               <div>
                 <h3>
-                  <p>Dokumentasikan kegiatanmu</p>
-                  <p>Agar bisa memotivasi orang lain!</p>
+                  <p>Ayo bersama-sama</p>
+                  <p>Menjaga Lingkungan untuk masa depan yang lebih baik!</p>
                 </h3>
               </div>
               <div>
@@ -92,7 +92,7 @@ const Home = () => {
               scrollbar={{ draggable: true }}
             >
               {isLoading ? (
-                <div className="spinner-border" role="status">
+                <div className="spinner-border text-info" role="status">
                   <span className="visually-hidden">Loading...</span>
                 </div>
               ) : (

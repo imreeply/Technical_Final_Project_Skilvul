@@ -1,7 +1,7 @@
 import axios from "axios";
 export const SIGN_UP = "SIGN_UP";
 export const SIGN_IN = "SIGN_IN";
-// export const ACTIVITY = 'ACTIVITY';
+export const ACTIVITY = "ACTIVITY";
 
 // export function fetchStart() {
 //     return {
@@ -33,10 +33,10 @@ export const postSignInSuccess = (user) => {
   };
 };
 
-export const postActivity = (user) => {
+export const postActivity = (admin) => {
   return {
     type: ACTIVITY,
-    user,
+    admin,
   };
 };
 
@@ -54,12 +54,12 @@ export const signIn = (user) => {
   };
 };
 
-// export const Acivity = (user) => {
-//     return async (dispatch) => {
-//         const response = await axios.post('https://634c3a82acb391d34a818933.mockapi.io/artikel', user);
-//         dispatch(postAcivitySuccess(response.data));
-//     }
-// }
+export const Activity = (admin) => {
+  return async (dispatch) => {
+    const response = await axios.post("https://febe12be-production.up.railway.app/Kegiatan/create", admin);
+    dispatch(postAcivitySuccess(response.data));
+  };
+};
 
 // export function getData() {
 //     return async (dispatch) => {

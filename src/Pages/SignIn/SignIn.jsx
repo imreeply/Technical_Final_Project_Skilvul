@@ -12,6 +12,7 @@ const SignIn = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  // const [status, setStatus] = useState("");
 
   // useEffect(() => {
   //   dispacth(signIn(username, password))
@@ -29,7 +30,7 @@ const SignIn = () => {
           showConfirmButton: false,
           timer: 1500,
         });
-        console.log(response.data.status);
+        console.log(response.data);
         sessionStorage.setItem("status", response.data.status);
         navigate("/");
       } catch (error) {

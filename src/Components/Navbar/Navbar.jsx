@@ -11,6 +11,7 @@ import Dashboard from "../../Pages/Dashboard/Dashboard";
 import "./Navbar.css";
 import AddActivity from "../../Pages/Dashboard/AddActivity";
 
+
 const Navbar = () => {
   const [isAdmin, setIsAdmin] = useState(sessionStorage.getItem("status") || "user");
   const { pathname } = useLocation();

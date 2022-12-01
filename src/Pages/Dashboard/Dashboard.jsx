@@ -15,8 +15,8 @@ function Dashboard() {
   }, []);
 
   const getActivity = async () => {
-    const response = await axios.get("https://coba2-production.up.railway.app/kegiatan");
-    setActivity(response?.data.data || []);
+    const response = await axios.get("https://febe12be-production.up.railway.app/Allkegiatan");
+    setActivity(response?.data.data|| []);
   };
 
   return (

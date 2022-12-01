@@ -55,8 +55,8 @@
 
 .buttonCard:hover,
 .buttonCard:focus {
-  background-color: #1a8179;
-  color: #ffffff;
+  background-color: #21ce69;
+  color: #fff;
 }
 
 .buttonCard:active {
