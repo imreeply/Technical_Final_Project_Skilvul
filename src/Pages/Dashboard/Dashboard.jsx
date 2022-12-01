@@ -16,7 +16,16 @@ function Dashboard() {
 
   const getActivity = async () => {
     const response = await axios.get("https://febe12be-production.up.railway.app/Allkegiatan");
-    setActivity(response?.data.data|| []);
+    setActivity(response?.data.data || []);
+  };
+
+  const deleteActivity = async (_id) => {
+    try {
+      await axios.delete(`https://febe12be-production.up.railway.app/Kegiatan/delete/${_id}`);
+      getActivity();
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -57,8 +66,10 @@ function Dashboard() {
                       <td>{item.judul_kegiatan}</td>
                       <td>{item.tgl_kegiatan}</td>
                       <td className="text-end">
-                        <BiEdit size={24} color="#1B5457" className="actionButton" />
-                        <BiTrashAlt size={24} color="#CF2A2A" className="actionButton" />
+                        <Link to={`editactivity/${item._id}`}>
+                          <BiEdit size={24} color="#1B5457" className="actionButton" />
+                        </Link>
+                        <BiTrashAlt onClick={() => deleteActivity(item._id)} size={24} color="#CF2A2A" className="actionButton" />
                       </td>
                     </tr>
                   ))}

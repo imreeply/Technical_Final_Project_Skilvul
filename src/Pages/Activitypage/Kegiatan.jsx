@@ -12,7 +12,7 @@ const Kegiatan = () => {
   }, []);
 
   const getActivity = async () => {
-    const response = await axios.get("https://be12-production.up.railway.app/Allkegiatan");
+    const response = await axios.get("https://febe12be-production.up.railway.app/Allkegiatan");
     setActivity(response?.data.data || []);
   };
 
