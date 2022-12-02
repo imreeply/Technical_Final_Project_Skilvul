@@ -10,7 +10,7 @@ function EditActivity() {
   const [lokasi_kegiatan, setLokasi] = useState("");
   const [deskripsi, setDesc] = useState("");
   const navigate = useNavigate();
-  const { id } = useParams();
+  const { _id } = useParams();
 
   useEffect(() => {
     (async () => {

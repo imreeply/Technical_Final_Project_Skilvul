@@ -54,8 +54,8 @@ function Dashboard() {
                 <thead>
                   <tr>
                     <th>No</th>
-                    <th>Activity</th>
-                    <th>Date</th>
+                    <th>Judul Kegiatan</th>
+                    <th>Waktu Pelaksanaan</th>
                     <th className="text-end">Action</th>
                   </tr>
                 </thead>
