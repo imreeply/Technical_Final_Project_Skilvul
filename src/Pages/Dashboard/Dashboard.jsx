@@ -66,7 +66,7 @@ function Dashboard() {
                       <td>{item.judul_kegiatan}</td>
                       <td>{item.tgl_kegiatan}</td>
                       <td className="text-end">
-                        <Link to={`editactivity/${item._id}`}>
+                        <Link to={`/EditActivity/${item._id}`}>
                           <BiEdit size={24} color="#1B5457" className="actionButton" />
                         </Link>
                         <BiTrashAlt onClick={() => deleteActivity(item._id)} size={24} color="#CF2A2A" className="actionButton" />

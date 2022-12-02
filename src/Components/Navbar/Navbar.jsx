@@ -78,7 +78,7 @@ const Navbar = () => {
         <Route path="/register" element={<SignUp />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/addactivity" element={<AddActivity />} />
-        <Route path="/editactivity" element={<EditActivity />} />
+        <Route path="/editactivity/:id" element={<EditActivity />} />
       </Routes>
     </>
   );

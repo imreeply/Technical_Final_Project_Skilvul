@@ -24,7 +24,7 @@ const Kegiatan = () => {
         </div>
         {activity?.map((item) => (
           <div className="cardContainer d-flex justify-content-center" key={item._id}>
-            <div className="card" style={{ width: "70rem", borderRadius: "50px", backgroundColor: "#31878C" }}>
+            <div className="card" style={{ width: "70rem", borderRadius: "40px", backgroundColor: "#31878C" }}>
               <div className="card-body">
                 <div className="row cardContent d-flex justify-content-between">
                   <div className="col-sm">

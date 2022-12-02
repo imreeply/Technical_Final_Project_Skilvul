@@ -10,15 +10,16 @@ function EditActivity() {
   const [lokasi_kegiatan, setLokasi] = useState("");
   const [deskripsi, setDesc] = useState("");
   const navigate = useNavigate();
-  const { _id } = useParams();
+  const { id } = useParams();
 
   useEffect(() => {
     (async () => {
       await getActivityById();
     })();
   }, []);
-  const getActivityById = async (_id) => {
-    const response = await axios.get(`https://febe12be-production.up.railway.app/Kegiatan/update/${_id}`);
+
+  const getActivityById = async () => {
+    const response = await axios.get(`https://febe12be-production.up.railway.app/Kegiatan/update/${id}`);
     setImg(response.data.img_kegiatan);
     setJudul(response.data.judul_kegiatan);
     setTgl(response.data.tgl_kegiatan);

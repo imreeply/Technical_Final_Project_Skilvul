@@ -43,23 +43,6 @@ const SignIn = () => {
     }
   };
 
-  // if(findUser) {
-  //   localStorage.setItem('user', JSON.stringify(findUser))
-  //   Swal.fire({
-  //     icon: 'success',
-  //     title: 'Login Success',
-  //     showConfirmButton: false,
-  //     timer: 1500
-  //   })
-  //   navigate('/about')
-  // } else {
-  //   Swal.fire({
-  //     icon: 'error',
-  //     title: 'Oops...',
-  //     text: 'Email atau Password Salah!',
-  //   })
-  // }
-
   return (
     <>
       <section className="section-signin" style={{ borderRadius: "5px" }}>
