@@ -13,24 +13,22 @@ function EditActivity() {
   const { id } = useParams();
 
   useEffect(() => {
-    (async () => {
-      await getActivityById();
-    })();
+    getActivityById();
   }, []);
 
   const getActivityById = async () => {
-    const response = await axios.get(`https://febe12be-production.up.railway.app/Kegiatan/update/${id}`);
-    setImg(response.data.img_kegiatan);
-    setJudul(response.data.judul_kegiatan);
-    setTgl(response.data.tgl_kegiatan);
-    setLokasi(response.data.lokasi_kegiatan);
-    setDesc(response.data.deskripsi);
+    const response = await axios.put(`https://febe12be-production.up.railway.app/Kegiatan/update/${id}`);
+    setImg(response.data.data.img_kegiatan || []);
+    setJudul(response.data.data.judul_kegiatan || []);
+    setTgl(response.data.data.tgl_kegiatan || []);
+    setLokasi(response.data.data.lokasi_kegiatan || []);
+    setDesc(response.data.data.deskripsi || []);
   };
 
-  const save = async (e) => {
+  const updateActivity = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("https://febe12be-production.up.railway.app/Kegiatan/create", {
+      await axios.put(`https://febe12be-production.up.railway.app/Kegiatan/update/${id}`, {
         img_kegiatan: img_kegiatan,
         judul_kegiatan: judul_kegiatan,
         tgl_kegiatan: tgl_kegiatan,
@@ -57,13 +55,13 @@ function EditActivity() {
           </div>
 
           <div className="formAdd d-flex justify-content-center">
-            <form style={{ width: "30rem" }} onSubmit={save}>
+            <form style={{ width: "30rem" }} onSubmit={updateActivity}>
               <div className="form-group">
-                <label>Gambar Kegiatan</label>
+                <label>Gambar Article</label>
                 <input type="url" className="input form-control" value={img_kegiatan} onChange={(e) => setImg(e.target.value)} placeholder="Masukkan Link Gambar" />
               </div>
               <div className="form-group">
-                <label>Judul Kegiatan</label>
+                <label>Judul Article</label>
                 <input type="text" className="input form-control" value={judul_kegiatan} onChange={(e) => setJudul(e.target.value)} placeholder="Masukkan Judul Kegiatan" />
               </div>
               <div className="form-group">

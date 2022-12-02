@@ -60,14 +60,3 @@ export const Activity = (admin) => {
     dispatch(postAcivitySuccess(response.data));
   };
 };
-
-// export function getData() {
-//     return async (dispatch) => {
-//        dispatch(fetchStart());
-//        const articleList = await axios.get(
-//           "https://634c991cf5d2cc648e90dc64.mockapi.io/gre/1/artikel"
-//        );
-
-//        dispatch(fetchDone(userList.data, eventList.data, articleList.data));
-//     };
-//  }
